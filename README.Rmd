@@ -1,0 +1,35 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(poweRof10)
+```
+
+# poweRof10
+
+<!-- badges: start -->
+![](https://img.shields.io/badge/just-for%20fun-blue.svg)
+
+<!-- badges: end -->
+
+`poweRof10` is a small package that scrapes data from athletics rankings website www.powerof10.info. 
+
+## Installation
+
+```{r eval=FALSE}
+# install.packages("remotes")
+remotes::install_git("hfshr/poweRof10")
+```
+
+
+
+
