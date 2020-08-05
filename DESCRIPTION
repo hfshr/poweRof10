@@ -6,22 +6,25 @@ Authors@R:
            family = "Fisher",
            role = c("aut", "cre"),
            email = "harryfisher21@gmail.com")
-Description: Scrape data from athletics rankings website <www.powerof10.info>
+Description: Scrape data from athletics rankings website
+    <www.powerof10.info>.
 License: MIT + file LICENSE
+Imports: 
+    attempt,
+    dplyr,
+    httr,
+    janitor,
+    magrittr,
+    polite,
+    purrr,
+    rvest,
+    stringr,
+    tibble,
+    xml2,
+    rlang
 Suggests: 
     testthat
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: 
-    dplyr,
-    httr,
-    rvest,
-    stringr,
-    janitor,
-    purrr,
-    polite,
-    attempt,
-    xml2,
-    tibble

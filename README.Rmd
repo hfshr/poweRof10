@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 library(poweRof10)
+library(tidyverse)
 ```
 
 # poweRof10
@@ -19,17 +20,39 @@ library(poweRof10)
 <!-- badges: start -->
 ![](https://img.shields.io/badge/just-for%20fun-blue.svg)
 
+[![R build status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](https://github.com/hfshr/poweRof10/actions)
 <!-- badges: end -->
 
-`poweRof10` is a small package that scrapes data from athletics rankings website www.powerof10.info. 
+`poweRof10` is a small package that scrapes data from athletics rankings website www.powerof10.info. I'm a big athletics fan and created `poweRof10` for a bit of fun to analyse my own performances, but thought it might be worth sharing here. The package is still a little rough around the edges, but the basic functionality should work well enough!
+
+## Basic usage
+
+You can get the rankings for a specific event/year/gender/agegroup using the `get_event` function:
+
+```{r}
+get_event(event = "100", agegroup = "ALL", gender = "M", year = 2016, top_n = 10) %>% 
+  select(rank, perf, name, venue)
+```
+
+Alternatively, you can search for an individual athlete and get their performance history:
+
+```{r}
+get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni") %>% 
+  select(event, perf, pos, venue, date) %>% 
+  head(10)
+```
 
 ## Installation
+
+Install from github with:
 
 ```{r eval=FALSE}
 # install.packages("remotes")
 remotes::install_git("hfshr/poweRof10")
 ```
 
+## Acknowledgements
 
+Thanks to the team that keep www.powerof10.info up and running, it's an invaluable resource for many!
 
 

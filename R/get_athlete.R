@@ -8,8 +8,6 @@
 #' @param club character. The registered club for the athlete
 #'
 #'
-
-
 #' @export
 get_athlete <- function(fn, sn, club = NULL){
 
@@ -41,14 +39,14 @@ get_athlete <- function(fn, sn, club = NULL){
       html_table() %>%
       .[[1]] %>%
       row_to_names(1) %>%
-      select(-c(Profile, runbritain)) %>%
+      select(-c(.data$Profile, .data$runbritain)) %>%
       bind_cols(., submit %>%
                   html_nodes("#cphBody_dgAthletes") %>%
                   html_nodes("a") %>%
                   html_attr("href") %>%
                   enframe(value = "link") %>%
                   filter(!str_detect(link, "runbritain")) %>%
-                  select(-name)) %>%
+                  select(-.data$name)) %>%
       mutate(link = paste0("https://www.thepowerof10.info/athletes/", link))
 
 
@@ -83,7 +81,7 @@ get_athlete <- function(fn, sn, club = NULL){
 
 }
 
-#' Get and clean athlete data
+# Get and clean athlete data
 ind_athletes <- function(link){
   temp <- link %>%
     read_html() %>%
@@ -92,12 +90,12 @@ ind_athletes <- function(link){
     html_table() %>%
     row_2_names(2) %>%
     clean_names() %>%
-    filter(!str_detect(perf, "[:alpha:]")) %>%
+    filter(!str_detect(.data$perf, "[:alpha:]")) %>%
     remove_empty("cols")
 }
 
 
-#' Borrowed from janitor package
+# Borrowed from janitor package
 row_2_names <- function (dat, row_number, remove_row = TRUE, remove_rows_above = TRUE){
 
   if (length(row_number) != 1 | !is.numeric(row_number)) {
@@ -122,3 +120,4 @@ row_2_names <- function (dat, row_number, remove_row = TRUE, remove_rows_above =
   }
 }
 
+utils::globalVariables(c("."))

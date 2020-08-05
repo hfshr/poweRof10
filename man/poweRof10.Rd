@@ -4,3 +4,6 @@
 \name{poweRof10}
 \alias{poweRof10}
 \title{poweRof10}
+\description{
+Tools to scrape athletics ranking data
+}

@@ -4,19 +4,27 @@
 \alias{get_event}
 \title{Get performances for a given year/event/gender}
 \usage{
-get_event(event, agegroup = "ALL", gender = "M", year, top_n = NULL)
+get_event(event, agegroup = "ALL", gender = "M", year = "2020", top_n = NULL)
 }
 \arguments{
 \item{event}{character string. The event you want to return.}
 
 \item{agegroup}{character string. Specify age group e.g., "U20", defaults to "ALL".}
 
+\item{gender}{character. Either "M" for males or "F" for females.}
+
 \item{year}{character. The year to return in YYYY format, e.g., "2020".}
 
 \item{top_n}{integer. Return top n rows.}
-
-\item{sex}{character. Either "M" for males or "F" for females.}
 }
 \description{
 Get performances for a given year/event/gender
+}
+\examples{
+\dontrun{
+
+get_event(event = "100", agegroup = "ALL", gender = "M", year = "2016", top_n = 10)
+
+}
+
 }

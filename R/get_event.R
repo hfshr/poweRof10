@@ -3,11 +3,18 @@
 #' @param event character string. The event you want to return.
 #' @param agegroup character string. Specify age group e.g., "U20", defaults to "ALL".
 #' @param year character. The year to return in YYYY format, e.g., "2020".
-#' @param sex character. Either "M" for males or "F" for females.
+#' @param gender character. Either "M" for males or "F" for females.
 #' @param top_n integer. Return top n rows.
 #'
+#' @examples
+#' \dontrun{
+#'
+#' get_event(event = "100", agegroup = "ALL", gender = "M", year = "2016", top_n = 10)
+#'
+#' }
+#'
 #' @export
-get_event <- function(event, agegroup = "ALL", gender = "M", year, top_n = NULL){
+get_event <- function(event, agegroup = "ALL", gender = "M", year = "2020", top_n = NULL){
 
   valid_events <- c("60", "100", "200", "400", "800", "1500", "3000", "5000", "10000",
                     "3000SC", "10K", "HM", "Mar", "60H", "110H", "400H", "HJ", "PV",
@@ -54,8 +61,8 @@ get_event <- function(event, agegroup = "ALL", gender = "M", year, top_n = NULL)
                    "wind_speed", "pb", "pb_in_year",
                    "name", "age_group", "year_",
                    "coach", "club", "venue", "date", "blank")) %>%
-    select(-blank) %>%
-    filter(!str_detect(perf, "[:alpha:]")) %>%
+    select(-.data$blank) %>%
+    filter(!str_detect(.data$perf, "[:alpha:]")) %>%
     mutate(year = as.character(year),
            event = as.character(event),
            gender = gender)
