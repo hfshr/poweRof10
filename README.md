@@ -5,9 +5,7 @@
 
 <!-- badges: start -->
 
-![](https://img.shields.io/badge/just-for%20fun-blue.svg)
-
-[![R build
+![](https://img.shields.io/badge/just-for%20fun-blue.svg) [![R build
 status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](https://github.com/hfshr/poweRof10/actions)
 <!-- badges: end -->
 
@@ -69,5 +67,5 @@ remotes::install_git("hfshr/poweRof10")
 
 ## Acknowledgements
 
-Thanks to the team that keep www.powerof10.info up and running, it’s an
-invaluable resource for many\!
+Thanks to the team that keep www.thepowerof10.info up and running, it’s
+an invaluable resource for many\!

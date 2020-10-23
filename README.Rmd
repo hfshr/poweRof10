@@ -18,9 +18,7 @@ library(tidyverse)
 # poweRof10
 
 <!-- badges: start -->
-![](https://img.shields.io/badge/just-for%20fun-blue.svg)
-
-[![R build status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](https://github.com/hfshr/poweRof10/actions)
+![](https://img.shields.io/badge/just-for%20fun-blue.svg) [![R build status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](https://github.com/hfshr/poweRof10/actions)
 <!-- badges: end -->
 
 `poweRof10` is a small package that scrapes data from athletics rankings website www.powerof10.info. I'm a big athletics fan and created `poweRof10` for a bit of fun to analyse my own performances, but thought it might be worth sharing here. The package is still a little rough around the edges, but the basic functionality should work well enough!
@@ -53,6 +51,6 @@ remotes::install_git("hfshr/poweRof10")
 
 ## Acknowledgements
 
-Thanks to the team that keep www.powerof10.info up and running, it's an invaluable resource for many!
+Thanks to the team that keep www.thepowerof10.info up and running, it's an invaluable resource for many!
 
 
