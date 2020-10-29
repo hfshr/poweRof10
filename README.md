@@ -10,10 +10,14 @@ status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](htt
 <!-- badges: end -->
 
 `poweRof10` is a small package that scrapes data from athletics rankings
-website www.powerof10.info. I’m a big athletics fan and created
+website www.thepowerof10.info. I’m a big athletics fan and created
 `poweRof10` for a bit of fun to analyse my own performances, but thought
 it might be worth sharing here. The package is still a little rough
 around the edges, but the basic functionality should work well enough\!
+
+Check out [this blog
+post](https://hfshr.netlify.app/posts/2020-10-22-introducing-powerof10/)
+for some more examples.
 
 ## Basic usage
 
@@ -62,7 +66,7 @@ Install from github with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_git("hfshr/poweRof10")
+remotes::install_github("hfshr/poweRof10")
 ```
 
 ## Acknowledgements
