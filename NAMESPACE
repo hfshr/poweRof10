@@ -2,6 +2,7 @@
 
 export(get_athlete)
 export(get_event)
+importFrom(attempt,stop_if)
 importFrom(attempt,stop_if_not)
 importFrom(dplyr,bind_cols)
 importFrom(dplyr,filter)

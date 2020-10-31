@@ -17,3 +17,10 @@ get_athlete(fn, sn, club = NULL)
 \code{get_athlete} returns a dataframe with a specified athletes performances. May return more than one athlete
 if a club is not specified and there are multiple athletes with the same name.
 }
+\examples{
+\dontrun{
+
+get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni")
+}
+
+}

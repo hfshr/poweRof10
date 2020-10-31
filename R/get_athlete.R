@@ -8,13 +8,20 @@
 #' @param club character. The registered club for the athlete
 #'
 #'
+#' @examples
+#' \dontrun{
+#'
+#' get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni")
+#' }
+#'
 #' @export
-get_athlete <- function(fn, sn, club = NULL){
-
+get_athlete <- function(fn, sn, club = NULL) {
   url <- "https://www.thepowerof10.info/athletes/athleteslookup.aspx"
 
-  session <- html_session(url,
-                          user_agent("https://github.com/hfshr"))
+  session <- html_session(
+    url,
+    user_agent("https://github.com/hfshr")
+  )
 
   x <- session %>%
     read_html() %>%
@@ -32,21 +39,24 @@ get_athlete <- function(fn, sn, club = NULL){
     xml_child(1) %>%
     xml_attr(attr = "action")
 
-  if (res_string == "./athleteslookup.aspx"){
-
+  if (res_string == "./athleteslookup.aspx") {
     link <- submit %>%
       html_nodes("#cphBody_dgAthletes") %>%
-      html_table() %>%
+      html_table()
+
+    attempt::stop_if(length(link) == 0, msg = paste0("Could not find athlete with the name: ", fn, " ", sn))
+
+    link <- link %>%
       .[[1]] %>%
       row_to_names(1) %>%
       select(-c(.data$Profile, .data$runbritain)) %>%
       bind_cols(., submit %>%
-                  html_nodes("#cphBody_dgAthletes") %>%
-                  html_nodes("a") %>%
-                  html_attr("href") %>%
-                  enframe(value = "link") %>%
-                  filter(!str_detect(link, "runbritain")) %>%
-                  select(-.data$name)) %>%
+        html_nodes("#cphBody_dgAthletes") %>%
+        html_nodes("a") %>%
+        html_attr("href") %>%
+        enframe(value = "link") %>%
+        filter(!str_detect(link, "runbritain")) %>%
+        select(-.data$name)) %>%
       mutate(link = paste0("https://www.thepowerof10.info/athletes/", link))
 
 
@@ -60,29 +70,22 @@ get_athlete <- function(fn, sn, club = NULL){
 
       return(res)
     } else {
-
       res <- ind_athletes(all_links)
 
       return(res)
-
     }
-
-
   } else {
-
     res <- res_string %>%
       str_remove(., ".") %>%
       paste0("https://www.thepowerof10.info/athletes", .) %>%
       ind_athletes()
 
     return(res)
-
   }
-
 }
 
 # Get and clean athlete data
-ind_athletes <- function(link){
+ind_athletes <- function(link) {
   temp <- link %>%
     read_html() %>%
     html_node("#cphBody_pnlPerformances") %>%
@@ -96,8 +99,7 @@ ind_athletes <- function(link){
 
 
 # Borrowed from janitor package
-row_2_names <- function (dat, row_number, remove_row = TRUE, remove_rows_above = TRUE){
-
+row_2_names <- function(dat, row_number, remove_row = TRUE, remove_rows_above = TRUE) {
   if (length(row_number) != 1 | !is.numeric(row_number)) {
     stop("row_number must be a numeric of length 1")
   }

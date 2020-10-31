@@ -10,7 +10,7 @@
 #' @importFrom purrr map_dfr compact
 #' @importFrom magrittr "%>%"
 #' @importFrom janitor clean_names row_to_names remove_empty
-#' @importFrom attempt stop_if_not
+#' @importFrom attempt stop_if_not stop_if
 #' @importFrom polite bow scrape
 #' @importFrom tibble enframe
 #' @importFrom utils head

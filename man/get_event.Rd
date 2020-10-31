@@ -24,7 +24,6 @@ Get performances for a given year/event/gender
 \dontrun{
 
 get_event(event = "100", agegroup = "ALL", gender = "M", year = "2016", top_n = 10)
-
 }
 
 }
