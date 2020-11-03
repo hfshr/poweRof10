@@ -1,0 +1,22 @@
+url: https://hfshr.github.io/poweRof10/
+
+template:
+  params:
+    ganalytics: UA-145834792-2
+
+
+authors:
+  Harry Fisher:
+    href: https://hfshr.netlify.app/
+
+development:
+  mode: auto
+
+navbar:
+  title: poweRof10
+  type: default
+  left:
+  - icon: fa-home fa-lg
+    href: /index.html
+  - text: Reference
+    href: reference/index.html
