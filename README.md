@@ -19,6 +19,15 @@ Check out [this blog
 post](https://hfshr.netlify.app/posts/2020-10-22-introducing-powerof10/)
 for some more examples.
 
+## Installation
+
+Install from github with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("hfshr/poweRof10")
+```
+
 ## Basic usage
 
 You can get the rankings for a specific event/year/gender/agegroup using
@@ -58,15 +67,6 @@ get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni") %>%
 #> 8      400 49.66   1     Sheffield 17 Feb 18
 #> 9      400 49.86   1       Cardiff 27 Jan 18
 #> 10     400 50.18   1       Cardiff 27 Jan 18
-```
-
-## Installation
-
-Install from github with:
-
-``` r
-# install.packages("remotes")
-remotes::install_github("hfshr/poweRof10")
 ```
 
 ## Acknowledgements

@@ -25,6 +25,15 @@ library(tidyverse)
 
 Check out [this blog post](https://hfshr.netlify.app/posts/2020-10-22-introducing-powerof10/) for some more examples.
 
+## Installation
+
+Install from github with:
+
+```{r eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("hfshr/poweRof10")
+```
+
 ## Basic usage
 
 You can get the rankings for a specific event/year/gender/agegroup using the `get_event` function:
@@ -40,15 +49,6 @@ Alternatively, you can search for an individual athlete and get their performanc
 get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni") %>% 
   select(event, perf, pos, venue, date) %>% 
   head(10)
-```
-
-## Installation
-
-Install from github with:
-
-```{r eval=FALSE}
-# install.packages("remotes")
-remotes::install_github("hfshr/poweRof10")
 ```
 
 ## Acknowledgements
