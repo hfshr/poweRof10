@@ -13,7 +13,7 @@ status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](htt
 website www.thepowerof10.info. I’m a big athletics fan and created
 `poweRof10` for a bit of fun to analyse my own performances, but thought
 it might be worth sharing here. The package is still a little rough
-around the edges, but the basic functionality should work well enough\!
+around the edges, but the basic functionality should work well enough!
 
 Check out [this blog
 post](https://hfshr.netlify.app/posts/2020-10-22-introducing-powerof10/)
@@ -72,4 +72,4 @@ get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni") %>%
 ## Acknowledgements
 
 Thanks to the team that keep www.thepowerof10.info up and running, it’s
-an invaluable resource for many\!
+an invaluable resource for many!
