@@ -77,16 +77,16 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Install from github with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"hfshr/poweRof10"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"hfshr/poweRof10"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="basic-usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#basic-usage" class="anchor"></a>Basic usage</h2>
 <p>You can get the rankings for a specific event/year/gender/agegroup using the <code>get_event</code> function:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="reference/get_event.html">get_event</a></span><span class="op">(</span>event <span class="op">=</span> <span class="st">"100"</span>, agegroup <span class="op">=</span> <span class="st">"ALL"</span>, gender <span class="op">=</span> <span class="st">"M"</span>, year <span class="op">=</span> <span class="fl">2016</span>, top_n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/get_event.html">get_event</a></span><span class="op">(</span>event <span class="op">=</span> <span class="st">"100"</span>, agegroup <span class="op">=</span> <span class="st">"ALL"</span>, gender <span class="op">=</span> <span class="st">"M"</span>, year <span class="op">=</span> <span class="fl">2016</span>, top_n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">select</span><span class="op">(</span><span class="va">rank</span>, <span class="va">perf</span>, <span class="va">name</span>, <span class="va">venue</span><span class="op">)</span>
 <span class="co">#&gt;    rank  perf                   name               venue</span>
 <span class="co">#&gt; 1     1  9.96            Joel Fearon             Bedford</span>
@@ -98,10 +98,10 @@
 <span class="co">#&gt; 7        9.96                                 Birmingham</span>
 <span class="co">#&gt; 8     4 10.04          Reece Prescod             Bedford</span>
 <span class="co">#&gt; 9     6 10.08 Harry Aikines-Aryeetey        Loughborough</span>
-<span class="co">#&gt; 10      10.02                                 Birmingham</span></pre></div>
+<span class="co">#&gt; 10      10.02                                 Birmingham</span></code></pre></div>
 <p>Alternatively, you can search for an individual athlete and get their performance history:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="reference/get_athlete.html">get_athlete</a></span><span class="op">(</span>fn <span class="op">=</span> <span class="st">"Harry"</span>, sn <span class="op">=</span> <span class="st">"Fisher"</span>, club <span class="op">=</span> <span class="st">"Cardiff/Cardiff Met Uni"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/get_athlete.html">get_athlete</a></span><span class="op">(</span>fn <span class="op">=</span> <span class="st">"Harry"</span>, sn <span class="op">=</span> <span class="st">"Fisher"</span>, club <span class="op">=</span> <span class="st">"Cardiff/Cardiff Met Uni"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu">select</span><span class="op">(</span><span class="va">event</span>, <span class="va">perf</span>, <span class="va">pos</span>, <span class="va">venue</span>, <span class="va">date</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span>
 <span class="co">#&gt;      event  perf pos         venue      date</span>
@@ -114,7 +114,7 @@
 <span class="co">#&gt; 7      400 49.43   5       Bedford  6 May 18</span>
 <span class="co">#&gt; 8      400 49.66   1     Sheffield 17 Feb 18</span>
 <span class="co">#&gt; 9      400 49.86   1       Cardiff 27 Jan 18</span>
-<span class="co">#&gt; 10     400 50.18   1       Cardiff 27 Jan 18</span></pre></div>
+<span class="co">#&gt; 10     400 50.18   1       Cardiff 27 Jan 18</span></code></pre></div>
 </div>
 <div id="acknowledgements" class="section level2">
 <h2 class="hasAnchor">

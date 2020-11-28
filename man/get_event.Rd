@@ -11,7 +11,7 @@ get_event(event, agegroup = "ALL", gender = "M", year = "2020", top_n = NULL)
 
 \item{agegroup}{character string. Specify age group e.g., "U20", defaults to "ALL".}
 
-\item{gender}{character. Either "M" for males or "F" for females.}
+\item{gender}{character. Either "M" for men or "W" for women.}
 
 \item{year}{character. The year to return in YYYY format, e.g., "2020".}
 

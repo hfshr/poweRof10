@@ -3,7 +3,7 @@
 #' @param event character string. The event you want to return.
 #' @param agegroup character string. Specify age group e.g., "U20", defaults to "ALL".
 #' @param year character. The year to return in YYYY format, e.g., "2020".
-#' @param gender character. Either "M" for males or "F" for females.
+#' @param gender character. Either "M" for men or "W" for women.
 #' @param top_n integer. Return top n rows.
 #'
 #' @examples
