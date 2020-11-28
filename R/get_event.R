@@ -31,8 +31,8 @@ get_event <- function(event, agegroup = "ALL", gender = "M", year = "2020", top_
     msg = paste0("Age must be one of ", paste0(valid_ages, collapse = ", "))
   )
 
-  attempt::stop_if_not(gender %in% c("M", "F"),
-    msg = paste0("Gender must be either 'M' or 'F'")
+  attempt::stop_if_not(gender %in% c("M", "W"),
+    msg = paste0("Gender must be either 'M' or 'W'")
   )
 
   base_url <- "https://www.thepowerof10.info/rankings/rankinglist.aspx?"
