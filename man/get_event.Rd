@@ -2,12 +2,16 @@
 % Please edit documentation in R/get_event.R
 \name{get_event}
 \alias{get_event}
-\title{Get performances for a given year/event/gender}
+\title{Get the ranking list}
 \usage{
 get_event(event, agegroup = "ALL", gender = "M", year = "2020", top_n = NULL)
 }
 \arguments{
-\item{event}{character string. The event you want to return.}
+\item{event}{character string. The event, can be one of:
+"60", "100", "200", "400", "800", "1500", "3000",
+"5000", "10000","3000SC", "10K", "HM", "Mar", "60H",
+"110H", "400H", "HJ", "PV","LJ",  "TJ", "SP7.26K", "DT2K",
+"HT7.26K", "JT800", "HepI", "Dec", "20KW", "50KW", "4x100" or "4x400".}
 
 \item{agegroup}{character string. Specify age group e.g., "U20", defaults to "ALL".}
 
@@ -18,7 +22,9 @@ get_event(event, agegroup = "ALL", gender = "M", year = "2020", top_n = NULL)
 \item{top_n}{integer. Return top n rows.}
 }
 \description{
-Get performances for a given year/event/gender
+\code{get_event} returns a dataframe containing the ranking list for a given
+event, agegroup, gender and year. Optionally, top_n can be specified to only return
+the first \emph{n} performances
 }
 \examples{
 \dontrun{

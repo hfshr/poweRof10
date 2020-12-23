@@ -1,6 +1,7 @@
 url: https://powerof10.hfshr.xyz
 
 template:
+  package: preferably
   params:
     ganalytics: UA-145834792-2
 

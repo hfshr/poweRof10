@@ -1,6 +1,6 @@
 Package: poweRof10
 Title: Scrape Data From Athletics Rankings Webiste
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "Harry",
            family = "Fisher",

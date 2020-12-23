@@ -16,8 +16,8 @@ it might be worth sharing here. The package is still a little rough
 around the edges, but the basic functionality should work well enough!
 
 Check out [this blog
-post](https://hfshr.netlify.app/posts/2020-10-22-introducing-powerof10/)
-for some more examples.
+post](https://hfshr.xyz/posts/2020-10-22-introducing-powerof10/) for
+some more examples.
 
 ## Installation
 

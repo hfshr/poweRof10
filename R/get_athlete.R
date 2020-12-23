@@ -1,4 +1,4 @@
-#' Get data for a specific athlete
+#' Retrieve data for a specific athlete.
 #'
 #' `get_athlete` returns a dataframe with a specified athletes performances. May return more than one athlete
 #' if a club is not specified and there are multiple athletes with the same name.
@@ -6,7 +6,6 @@
 #' @param fn character. Athletes forename.
 #' @param sn character. Athletes surname.
 #' @param club character. The registered club for the athlete
-#'
 #'
 #' @examples
 #' \dontrun{

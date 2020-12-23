@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_athlete.R
 \name{get_athlete}
 \alias{get_athlete}
-\title{Get data for a specific athlete}
+\title{Retrieve data for a specific athlete.}
 \usage{
 get_athlete(fn, sn, club = NULL)
 }
