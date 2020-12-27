@@ -2,7 +2,7 @@ pandoc: 2.11.2
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2020-12-23T08:48Z
+last_built: 2020-12-27T11:42Z
 urls:
   reference: https://powerof10.hfshr.xyz/reference
   article: https://powerof10.hfshr.xyz/articles

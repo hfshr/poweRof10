@@ -7,6 +7,7 @@
 
 ![](https://img.shields.io/badge/just-for%20fun-blue.svg) [![R build
 status](https://github.com/hfshr/poweRof10/workflows/R-CMD-check/badge.svg)](https://github.com/hfshr/poweRof10/actions)
+![stability-wip](https://img.shields.io/badge/stability-work_in_progress-lightgrey.svg)
 <!-- badges: end -->
 
 `poweRof10` is a small package that scrapes data from athletics rankings
@@ -30,8 +31,8 @@ remotes::install_github("hfshr/poweRof10")
 
 ## Basic usage
 
-You can get the rankings for a specific event/year/gender/agegroup using
-the `get_event` function:
+You can get the rankings for a specific event/year/gender/age group
+using the `get_event()` function:
 
 ``` r
 get_event(event = "100", agegroup = "ALL", gender = "M", year = 2016, top_n = 10) %>% 
@@ -50,7 +51,7 @@ get_event(event = "100", agegroup = "ALL", gender = "M", year = 2016, top_n = 10
 ```
 
 Alternatively, you can search for an individual athlete and get their
-performance history:
+performance history with `get_athlete()`:
 
 ``` r
 get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni") %>% 
