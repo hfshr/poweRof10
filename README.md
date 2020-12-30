@@ -74,3 +74,8 @@ get_athlete(fn = "Harry", sn = "Fisher", club = "Cardiff/Cardiff Met Uni") %>%
 
 Thanks to the team that keep www.thepowerof10.info up and running, it’s
 an invaluable resource for many!
+
+## Disclaimer
+
+This software is in no way affiliated, endorsed, or approved by
+www.thepowerof10.info or any of its affiliates.
