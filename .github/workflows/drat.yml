@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  drat-upload:
+    runs-on: ubuntu-20.04
+    env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+      RSPM: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"
+    name: Drat Upload
+    steps:
+      - uses: mikemahoney218/upload-to-drat-repo@v0.1
+        with:
+          drat_repo: 'hfshr/drat'
+          token: "${{ secrets.DRAT_SECRET }}"
+          commit_message: "Automated update (add qbr)"
+          commit_email: "harryfisher21@gmail.com"

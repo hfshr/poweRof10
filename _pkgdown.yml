@@ -4,6 +4,7 @@ template:
   package: preferably
   params:
     ganalytics: UA-145834792-2
+    toggle: manual
 
 
 authors:
