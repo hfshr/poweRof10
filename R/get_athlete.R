@@ -17,21 +17,21 @@
 get_athlete <- function(fn, sn, club = NULL) {
   url <- "https://www.thepowerof10.info/athletes/athleteslookup.aspx"
 
-  session <- html_session(
+  session <- session(
     url,
     user_agent("https://github.com/hfshr")
   )
 
   x <- session %>%
     read_html() %>%
-    html_node("form") %>%
+    html_element("form") %>%
     html_form()
 
   x[["fields"]][["ctl00$cphBody$txtSurname"]][["value"]] <- sn
   x[["fields"]][["ctl00$cphBody$txtFirstName"]][["value"]] <- fn
   x[["fields"]][["ctl00$cphBody$txtClub"]][["value"]] <- club
 
-  submit <- suppressMessages(submit_form(session, form = x))
+  submit <- suppressMessages(session_submit(session, form = x))
 
   res_string <- content(submit$response) %>%
     xml_child(2) %>%
@@ -40,7 +40,7 @@ get_athlete <- function(fn, sn, club = NULL) {
 
   if (res_string == "./athleteslookup.aspx") {
     link <- submit %>%
-      html_nodes("#cphBody_dgAthletes") %>%
+      html_elements("#cphBody_dgAthletes") %>%
       html_table()
 
     attempt::stop_if(length(link) == 0, msg = paste0("Could not find athlete with the name: ", fn, " ", sn))
@@ -50,8 +50,8 @@ get_athlete <- function(fn, sn, club = NULL) {
       row_to_names(1) %>%
       select(-c(.data$Profile, .data$runbritain)) %>%
       bind_cols(., submit %>%
-        html_nodes("#cphBody_dgAthletes") %>%
-        html_nodes("a") %>%
+        html_element("#cphBody_dgAthletes") %>%
+        html_elements("a") %>%
         html_attr("href") %>%
         enframe(value = "link") %>%
         filter(!str_detect(link, "runbritain")) %>%
@@ -87,7 +87,7 @@ get_athlete <- function(fn, sn, club = NULL) {
 ind_athletes <- function(link) {
   temp <- link %>%
     read_html() %>%
-    html_node("#cphBody_pnlPerformances") %>%
+    html_element("#cphBody_pnlPerformances") %>%
     xml_child(., 4) %>%
     html_table() %>%
     row_2_names(2) %>%
@@ -115,8 +115,7 @@ row_2_names <- function(dat, row_number, remove_row = TRUE, remove_rows_above = 
   })
   if (length(rows_to_remove)) {
     dat[-(rows_to_remove), , drop = FALSE]
-  }
-  else {
+  } else {
     dat
   }
 }

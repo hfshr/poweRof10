@@ -61,8 +61,8 @@ get_event <- function(event, agegroup = "ALL", gender = "M", year = "2020", top_
   )
 
   res <- scrape(session) %>%
-    html_nodes("#cphBody_lblCachedRankingList") %>%
-    html_node("table") %>%
+    html_elements("#cphBody_lblCachedRankingList") %>%
+    html_element("table") %>%
     html_table() %>%
     .[[1]]  %>%
     row_2_names(2) %>%

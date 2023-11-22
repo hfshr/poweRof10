@@ -3,7 +3,7 @@
 #' Tools to scrape athletics ranking data
 #'
 #' @importFrom httr modify_url user_agent content
-#' @importFrom rvest html_session html_nodes html_node html_table html_form submit_form html_attr
+#' @importFrom rvest session html_elements html_element html_table html_form session_submit html_attr
 #' @importFrom xml2 read_html xml_child xml_attr
 #' @importFrom dplyr filter select bind_cols mutate pull
 #' @importFrom stringr str_detect str_remove
